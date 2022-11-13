@@ -16,7 +16,7 @@ class ModelBuilder: Builder {
     static func createMainModule() -> UIViewController {
         let model = Person(firstName: "Jack", lastName: "Sparrow")
         let view = MainViewController()
-        let presenter = mainPresenter(view: view, person: model)
+        let presenter = MainPresenter(view: view, person: model)
         view.presenter = presenter
         return view
     }

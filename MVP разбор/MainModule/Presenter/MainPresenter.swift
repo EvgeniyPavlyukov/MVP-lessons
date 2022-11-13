@@ -17,7 +17,7 @@ protocol ViewPresenterProtocol: AnyObject {
     func showGreeting()
 }
 
-class mainPresenter: ViewPresenterProtocol {
+class MainPresenter: ViewPresenterProtocol {
     
     let view: ViewProtocol //абстракция
     let person: Person

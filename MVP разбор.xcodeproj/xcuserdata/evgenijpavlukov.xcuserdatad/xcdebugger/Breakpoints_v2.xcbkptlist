@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "73158511-5CC8-44D5-A2D4-66F1BA4A1AEC"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "859623F4-4115-43EC-B75F-77A380E32CF1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVP &#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;/MainModule/View/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "didTapButtonAction()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1443F772-80E8-46A7-93A4-447AC6DACE63"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVP &#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;/MainModule/View/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "setGreetings(greeting:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB13E855-249C-4C72-9D76-312AEFD8AFCA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVP &#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;/ModelBuilder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "createMainModule()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C28AF60-6FF7-43D5-8AE2-9788CAE4422D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVP &#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;/MainModule/Presenter/Presenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "showGreeting()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D52D636-E274-4748-ABD3-C255FD8106E9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVP &#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;/MainModule/Presenter/Presenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "init(view:person:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8D52D636-E274-4748-ABD3-C255FD8106E9 - 9d47f0ad498f83c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVP_&#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;.mainPresenter.__allocating_init(view: MVP_&#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;.ViewProtocol, person: MVP_&#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;.Person) -&gt; MVP_&#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;.mainPresenter"
+                  moduleName = "MVP &#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijpavlukov/Development/MVP%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80/MVP%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80/MainModule/Presenter/Presenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "55">
+               </Location>
+               <Location
+                  uuid = "8D52D636-E274-4748-ABD3-C255FD8106E9 - 19962af6412f255a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVP_&#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;.mainPresenter.init(view: MVP_&#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;.ViewProtocol, person: MVP_&#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;.Person) -&gt; MVP_&#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;.mainPresenter"
+                  moduleName = "MVP &#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evgenijpavlukov/Development/MVP%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80/MVP%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80/MainModule/Presenter/Presenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D864DB54-40A0-40E6-915D-D65338E55C22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVP &#x440;&#x430;&#x437;&#x431;&#x43e;&#x440;/MainModule/View/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "didTapOutButtonAction()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
