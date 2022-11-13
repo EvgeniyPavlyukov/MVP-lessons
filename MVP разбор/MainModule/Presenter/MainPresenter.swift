@@ -8,28 +8,41 @@
 
 import Foundation
 
-protocol ViewProtocol: AnyObject {
-    func setGreetings(greeting: String)
+protocol ViewProtocol: AnyObject { //output
+    func success()
+    func failure(error: Error)
 }
 
-protocol ViewPresenterProtocol: AnyObject {
-    init(view: ViewProtocol, person: Person)
-    func showGreeting()
+protocol ViewPresenterProtocol: AnyObject { //input
+    init(view: ViewProtocol, networkService: NetworkServiceProtocol)
+    func getComments() //запрашивает комменты из сети
+    var comments: [Comment]? {get set}
 }
 
 class MainPresenter: ViewPresenterProtocol {
+    weak var view: ViewProtocol? //абстракция
+    let networkService: NetworkServiceProtocol!
+    var comments: [Comment]?
     
-    let view: ViewProtocol //абстракция
-    let person: Person
-    
-    required init(view: ViewProtocol, person: Person){
+    required init(view: ViewProtocol, networkService: NetworkServiceProtocol){
         self.view = view
-        self.person = person
+        self.networkService = networkService
+        getComments()
     }
     
-    func showGreeting() {
-        let greeting = self.person.firstName + " " + self.person.lastName // business logic
-        self.view.setGreetings(greeting: greeting)
+    func getComments() {
+        networkService.getComment { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let comments):
+                    self.comments = comments
+                    self.view?.success()
+                case . failure(let error):
+                    self.view?.failure(error: error) // нужно синхронизировать
+                }
+            }
+        }
     }
     
 }

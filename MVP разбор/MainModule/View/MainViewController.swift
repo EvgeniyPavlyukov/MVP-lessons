@@ -13,51 +13,61 @@ import Foundation
 
 class MainViewController: UIViewController { // это только вью
 
-    //MARK: - UILabel
-    var myLabel: UILabel!
-    var myButton: UIButton!
+    //MARK: - TableView
+    var myTableView: UITableView!
     var presenter: ViewPresenterProtocol! // dependecy injection
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        createLabel()
-        createButton()
-    }
-
-    func createLabel() {
-        myLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-        myLabel.center = view.center
-        myLabel.textAlignment = .center
-        myLabel.textColor = .black
-        view.addSubview(myLabel)
-    }
-    
-    func createButton() {
-        myButton = UIButton(frame: CGRect(x: 150, y: 400, width: 70, height: 40))
         
-        myButton.backgroundColor = .gray
-        myButton.setTitle("Press", for: .normal)
-        myButton.layer.cornerRadius = 9
-        myButton.addTarget(self, action: #selector(didTapButtonAction), for: .touchDown)
-        myButton.addTarget(self, action: #selector(didTapOutButtonAction), for: .touchUpInside)
-        view.addSubview(myButton)
+        createTableView()
+    
     }
     
+    func createTableView() {
+        myTableView = UITableView(frame: view.bounds, style: .plain)
+        myTableView.delegate = self
+        myTableView.dataSource = self
+        myTableView.register(CustomTableCellPresenter.self, forCellReuseIdentifier: CustomTableCellPresenter.identifier)
+        
+        view.addSubview(myTableView)
+    }
     
-    @objc func didTapButtonAction() {
-        self.presenter.showGreeting()
-        myButton.alpha = 0.5
-    }
-    @objc func didTapOutButtonAction() {
-        myButton.alpha = 1
-    }
 }
 
 extension MainViewController: ViewProtocol {
-    func setGreetings(greeting: String) {
-        self.myLabel.text = greeting
+    func success() {
+        myTableView.reloadData()
     }
+    
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
+}
+
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.comments?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let itemCell = tableView.dequeueReusableCell(withIdentifier: CustomTableCellPresenter.identifier, for: indexPath) as? CustomTableCellPresenter {
+            let comment = presenter.comments?[indexPath.row]
+            var cellSettings = itemCell.defaultContentConfiguration()
+            cellSettings.text = comment?.body
+            itemCell.contentConfiguration = cellSettings
+            return itemCell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let comment = presenter.comments?[indexPath.row]
+        let detailViewController = ModelBuilder.createDetailModule(comment: comment)
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
     
     
 }
