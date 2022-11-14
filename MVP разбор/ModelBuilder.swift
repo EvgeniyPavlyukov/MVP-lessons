@@ -8,24 +8,24 @@
 import Foundation
 import UIKit
 
-protocol Builder {
-    static func createMainModule() -> UIViewController
-    static func createDetailModule(comment: Comment?) -> UIViewController
+protocol AssemblyBuilderProtocol {
+    func createMainModule(router: RouterProtocol) -> UIViewController
+    func createDetailModule(comment: Comment?, router: RouterProtocol) -> UIViewController
 }
 
-class ModelBuilder: Builder {
-    static func createMainModule() -> UIViewController {
+class ModelBuilder: AssemblyBuilderProtocol {
+    func createMainModule(router: RouterProtocol) -> UIViewController {
         let view = MainViewController()
         let networkService = NetworkService()
-        let presenter = MainPresenter(view: view, networkService: networkService)
+        let presenter = MainPresenter(view: view, networkService: networkService, router: router)
         view.presenter = presenter
         return view
     }
     
-    static func createDetailModule(comment: Comment?) -> UIViewController { //здесь происходит сборка вьюхи и иньектится
+    func createDetailModule(comment: Comment?, router: RouterProtocol) -> UIViewController {
         let view = DetailViewController()
         let networkService = NetworkService()
-        let presenter = DetailPresenter(view: view, networkService: networkService, comment: comment)
+        let presenter = DetailPresenter(view: view, networkService: networkService, router: router, comment: comment)
         view.presenter = presenter
         return view
     }

@@ -15,8 +15,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let mainVC = ModelBuilder.createMainModule()
-        let navBar = UINavigationController(rootViewController: mainVC)
+        
+        let navBar = UINavigationController()
+        let assemblyBuiled = ModelBuilder()
+        let router = Router(navigationController: navBar, assemblyBuilder: assemblyBuiled)
+        router.initialViewController()
         window?.rootViewController = navBar
         window?.makeKeyAndVisible()
     }

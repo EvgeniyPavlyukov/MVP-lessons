@@ -20,6 +20,7 @@
 		3BDEB5DD2920FF800003C9F4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDEB5DC2920FF800003C9F4 /* NetworkService.swift */; };
 		3BDEB5E0292181550003C9F4 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDEB5DF292181550003C9F4 /* DetailPresenter.swift */; };
 		3BDEB5E4292183570003C9F4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDEB5E3292183570003C9F4 /* DetailViewController.swift */; };
+		3BDEB5E729228A960003C9F4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDEB5E629228A960003C9F4 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3BDEB5DC2920FF800003C9F4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		3BDEB5DF292181550003C9F4 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		3BDEB5E3292183570003C9F4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3BDEB5E629228A960003C9F4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				3BDEB5A22913CAD90003C9F4 /* AppDelegate.swift */,
 				3BDEB5A42913CAD90003C9F4 /* SceneDelegate.swift */,
 				3BDEB5D8291FD4410003C9F4 /* ModelBuilder.swift */,
+				3BDEB5E629228A960003C9F4 /* Router.swift */,
 				3BDEB5D4291FD2630003C9F4 /* MainModule */,
 				3BDEB5E2292183250003C9F4 /* DetailModule */,
 				3BDEB5DE2920FFA40003C9F4 /* SeviceLayer */,
@@ -233,6 +236,7 @@
 				3BDEB5D3291FC9090003C9F4 /* MainPresenter.swift in Sources */,
 				3BDEB5DB2920F28F0003C9F4 /* CustomTableCellPresenter.swift in Sources */,
 				3BDEB5D9291FD4410003C9F4 /* ModelBuilder.swift in Sources */,
+				3BDEB5E729228A960003C9F4 /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,20 +14,28 @@ protocol ViewProtocol: AnyObject { //output
 }
 
 protocol ViewPresenterProtocol: AnyObject { //input
-    init(view: ViewProtocol, networkService: NetworkServiceProtocol)
+    init(view: ViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func getComments() //запрашивает комменты из сети
-    var comments: [Comment]? {get set}
+    var comments: [Comment]? { get set }
+    func tapTheComment(comment: Comment?) //чтобы передать дальше
 }
 
 class MainPresenter: ViewPresenterProtocol {
+    
     weak var view: ViewProtocol? //абстракция
+    let router: RouterProtocol?
     let networkService: NetworkServiceProtocol!
     var comments: [Comment]?
     
-    required init(view: ViewProtocol, networkService: NetworkServiceProtocol){
+    required init(view: ViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol){
         self.view = view
         self.networkService = networkService
+        self.router = router
         getComments()
+    }
+    
+    func tapTheComment(comment: Comment?) {
+        router?.showDetail(comment: comment)
     }
     
     func getComments() {
